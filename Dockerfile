@@ -1,10 +1,4 @@
-FROM node:18
+FROM nginx
 
-WORKDIR /app
+COPY index.html /usr/share/nginx/html/index.html
 
-COPY package.json ./
-RUN npm install
-
-COPY app.js index.html ./
-
-CMD ["node", "app.js"]
